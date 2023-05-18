@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
     <name>Better Devil Chance</name>
-    <directory>BetterDevilChance</directory>
+    <directory>betterdevilchance</directory>
     <id>2977204078</id>
     <description>BetterDevilChance is a mod that reworks devil chance to make taking red heart damage more forgiving. Healing your red hearts fully will restore an already lost devil chance</description>
-    <version>1.1</version>
+    <version>1.2</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
 </metadata>
