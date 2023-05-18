@@ -1,7 +1,7 @@
 import {HealthType, ModCallbackCustom, upgradeMod} from "isaacscript-common";
 import {LevelStateFlag} from "isaac-typescript-definitions";
 
-const MOD_NAME = "BetterDevilChance";
+const MOD_NAME = "Better Devil Chance";
 
 main();
 
