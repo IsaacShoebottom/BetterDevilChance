@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<?xml-model href="https://wofsauge.github.io/isaac-xml-validator/xsd/metadata.xsd" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <name>BetterDevilChance</name>
-  <directory>BetterDevilChance</directory>
-  <description>BetterDevilChance is a mod that reworks devil chance to make taking red heart damage more forgiving. Healing your red hearts fully will restore an already lost devil chance</description>
-  <version>1.0</version>
-  <visibility />
+    <name>Better Devil Chance</name>
+    <directory>BetterDevilChance</directory>
+    <id>2977204078</id>
+    <description>BetterDevilChance is a mod that reworks devil chance to make taking red heart damage more forgiving. Healing your red hearts fully will restore an already lost devil chance</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
 </metadata>
