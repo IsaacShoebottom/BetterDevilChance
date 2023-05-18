@@ -1,21 +1,29 @@
-import { ModCallback } from "isaac-typescript-definitions";
+import {HealthType, ModCallbackCustom, upgradeMod} from "isaacscript-common";
+import {LevelStateFlag} from "isaac-typescript-definitions";
 
 const MOD_NAME = "BetterDevilChance";
 
 main();
 
 function main() {
-  // Instantiate a new mod object, which grants the ability to add callback functions that
-  // correspond to in-game events.
-  const mod = RegisterMod(MOD_NAME, 1);
+	const modVanilla = RegisterMod(MOD_NAME, 1);
+	const mod = upgradeMod(modVanilla);
 
-  // Register a callback function that corresponds to when a new player is initialized.
-  mod.AddCallback(ModCallback.POST_PLAYER_INIT, postPlayerInit);
+	mod.AddCallbackCustom(ModCallbackCustom.POST_PLAYER_CHANGE_HEALTH,
+		(player, healthType) => {
+			Isaac.DebugString("Callback fired: POST_PLAYER_CHANGE_HEALTH");
 
-  // Print a message to the "log.txt" file.
-  Isaac.DebugString(`${MOD_NAME} initialized.`);
-}
+			if (healthType !== HealthType.RED) {	// Only care about red hearts
+				return
+			}
+			if (!player.HasFullHearts()) {			// Only care about full hearts
+				return
+			}
 
-function postPlayerInit() {
-  Isaac.DebugString("Callback fired: POST_PLAYER_INIT");
+			Game().GetLevel().SetStateFlag(LevelStateFlag.RED_HEART_DAMAGED, false)
+			Isaac.DebugString(`${MOD_NAME}: Regained full red hearts. Devil chance restored.`)
+		})
+
+	// Print a message to the "log.txt" file.
+	Isaac.DebugString(`${MOD_NAME} initialized.`);
 }

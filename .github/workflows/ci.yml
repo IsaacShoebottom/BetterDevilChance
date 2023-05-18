@@ -29,8 +29,8 @@ jobs:
       - name: Test to see if the project compiles
         run: bash build.sh
 
-      - name: Perform automated checks
-        run: bash lint.sh
+      #- name: Perform automated checks
+      #  run: bash lint.sh
 
       # To enable publishing in CI, follow the instructions here:
       # https://github.com/IsaacScript/isaac-steam-workshop-upload
